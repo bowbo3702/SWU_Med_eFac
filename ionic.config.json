@@ -1,0 +1,7 @@
+{
+  "name": "SWU_Med_eFac",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
