@@ -1,0 +1,30 @@
+
+<ion-header>
+
+    <ion-navbar style="background-color: #f41463;">
+      <ion-title>Scan QR Code</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="img-bg">
+      <form >
+      <ion-grid>
+        <ion-row>
+          <ion-col col-12 style="text-align: center;">
+              <img src="assets/imgs/ico-qr.png" style="width:50%; margin: 0 auto !important;text-align: center;" >
+          </ion-col>
+          <ion-col col-12  style="text-align: center;">
+            <span style="color: #232423;font-size:larger;">กดปุ่มเพื่อสแกน QR Code</span>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12 style="text-align:center;">
+                  <button ion-button full round  color="primary"  (click)="CallScaner()">Scan QR Code</button>
+                    <ion-input id="txtQR_DATA">{{QR_DATA}}</ion-input>
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+    </form>
+  </ion-content>

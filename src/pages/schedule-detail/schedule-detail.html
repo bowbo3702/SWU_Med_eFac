@@ -1,0 +1,63 @@
+<ion-header style="background-color: #ceebea;">
+  <ion-navbar>
+    <ion-title>รายละเอียด</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item text-wrap>
+          <strong>วันที่</strong> : {{sDate}}</ion-item>
+        <ion-item text-wrap>
+          <strong>เวลา</strong> : {{sTime}}</ion-item>
+        <ion-item text-wrap>
+          <strong>วิชา</strong> : {{sCourseName}}</ion-item>
+        <ion-item text-wrap   *ngIf="isPreClinic">
+            <strong>วิธีการสอน</strong> : {{sLearnType}}</ion-item>
+        <ion-item text-wrap>
+          <strong>สถานที่</strong> : {{sLocation}}</ion-item>
+        <ion-item text-wrap>
+          <strong>ชั้นปี</strong> : {{sClassNo}}</ion-item>
+      </ion-list>
+      <ion-list>
+          <ion-list-header style="border-bottom: .55px solid #c8c7cc;background: #efeff4;">
+            <strong style="color: black;">อาจารย์</strong>
+          </ion-list-header>
+          <ion-item *ngFor="let p of arrPerson" detail-none text-wrap>
+              <p style="color: black;">{{ p.sPersonnelName }}</p>
+          </ion-item>
+      </ion-list>
+      <ion-list  *ngIf="isHasPersonReplace">
+        <ion-list-header style="border-bottom: .55px solid #c8c7cc;background: #efeff4;">
+          <strong style="color: black;">อาจารย์คุมแทน</strong>
+          </ion-list-header>
+          <ion-item *ngFor="let pr of arrPersonReplace" detail-none text-wrap>
+              <p style="color: black;">{{ pr.sPersonnelName }}</p>
+          </ion-item>
+      </ion-list>
+      
+      <ion-list  *ngIf="isHasGroup">
+          <ion-list-header>
+            <strong style="color: black;">กลุ่มนิสิต {{sGroupName}}</strong>
+          </ion-list-header>
+      </ion-list>
+      <ion-list>
+         <ion-list-header style="border-bottom: .55px solid #c8c7cc;background: #efeff4;">
+          <strong style="color: black;">หัวข้อการเรียน</strong>
+          </ion-list-header>
+          <ion-item *ngFor="let tp of lstScheduleTopic;let i = index;" detail-none text-wrap>
+              <p style="color: black;">{{ tp.nTopicNo }}. {{ tp.sTopicName }}</p>
+              <ion-item *ngFor="let tf of tp.lstTopicFile;let f = index;" ion-item detail-none text-wrap>
+                  <!-- <p>{  tp.sLink : tp.sFileName  } [ tp.cType == 'L']</p> -->
+                  {{ tf.nTopicFileNo }}. {{tf.cType == 'L' ? tf.sLink: tf.sFileName}}
+                  <button ion-button outline item-end (click)="open(tf.cType,tf.sLink,tf.nScheduleTopicFileID)">เปิด</button>
+              </ion-item>
+          </ion-item>
+      </ion-list>
+      <div padding  *ngIf="isCanSwap">
+          <button ion-button full icon-right color="primary" round (click)="Swap()">
+            เปลี่ยนเวลา
+            <ion-icon name="sync"></ion-icon>
+          </button>
+      </div>
+</ion-content>

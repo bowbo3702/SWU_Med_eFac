@@ -1,0 +1,72 @@
+
+<ion-header style="background-color: #ceebea;">
+  <ion-navbar>
+    <ion-title>Schedule</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" (click)="filterDate()">
+          <ion-icon name="funnel"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2> 
+                <button ion-button icon-only small ><ion-icon name="arrow-dropleft"></ion-icon></button>
+        </ion-col>  
+        <ion-col col-8 style="text-align:center;font-weight: bold;padding-top: 12px;">
+            {{ viewTitle }}
+        </ion-col>
+        <ion-col col-2 style="text-align:right;"> 
+                <button ion-button icon-only small ><ion-icon name="arrow-dropright"></ion-icon></button>
+        </ion-col>    
+            <!--<ion-col col-2> 
+                <button ion-button icon-only color="royal" (click)="filterDate()">
+                <ion-icon name="funnel"></ion-icon>
+              </button> -->
+            <!-- <button ion-button icon-only small (click)="addEvent()"><ion-icon name="add"></ion-icon></button>
+            </ion-col> -->
+      </ion-row>
+    </ion-grid>
+          <ng-template #templateAllDay let-day="day" let-eventTemplate="eventTemplate">
+              <div [ngClass]="{'calendar-event-wrap': day.events}" *ngIf="day.events"
+                  [ngStyle]="{height: 25*day.events.length+'px'}">
+                  <div *ngFor="let displayEvent of day.events" class="calendar-event" tappable
+                      (click)="onEventSelected(displayEvent.event)"
+                      [ngStyle]="{top: 25*displayEvent.position+'px', width: 100*(displayEvent.endIndex-displayEvent.startIndex)+'%', height: '25px'}">
+                      <div class="calendar-event-inner" [ngStyle]="{'background-color':'#488aff','height':'100%','color':'white','font-size': '11px'}">{{displayEvent.event.title}}</div>
+                  </div>
+                  <!-- (displayEvent.event.sScheduleType === 'C' ? '#488aff'' : '#488aff')  (onCurrentDateChanged)="reloadDta($event)"-->
+              </div>
+          </ng-template>
+          <ng-template #templateOneDay let-tm="tm" let-hourParts="hourParts" let-eventTemplate="eventTemplate">
+              <div [ngClass]="{'calendar-event-wrap': tm.events}" *ngIf="tm.events">
+                  <div *ngFor="let displayEvent of tm.events" class="calendar-event" tappable
+                      (click)="onEventSelected(displayEvent.event)"
+                      [ngStyle]="{top: (37*displayEvent.startOffset/hourParts)+'px',left: 100/displayEvent.overlapNumber*displayEvent.position+'%', width: 100/displayEvent.overlapNumber+'%', height: 37*(displayEvent.endIndex -displayEvent.startIndex - (displayEvent.endOffset + displayEvent.startOffset)/hourParts)+'px'}">
+                      <div class="calendar-event-inner" [ngStyle]="{'background-color':'#488aff','height':'100%','color':'white','font-size': '11px'}">{{displayEvent.event.title}}</div>
+                  </div>
+              </div>
+          </ng-template>
+              <calendar 
+              [weekviewAllDayEventSectionTemplate]="templateAllDay"
+              [weekviewNormalEventSectionTemplate]="templateOneDay"
+              [locale]="calendar.locale"
+              [eventSource]="eventSource"
+              [calendarMode]="calendar.mode"
+              [currentDate]="calendar.currentDate"
+              (onEventSelected)="onEventSelected($event)"
+              (onTitleChanged)="onViewTitleChanged($event)"
+              (onTimeSelected)="onTimeSelected($event)"
+             
+              [dateFormatter]="calendar.dateFormatter"
+              [markDisabled]="markDisabled"
+              step="30"
+              startHour="7"
+              endHour="23"
+              startingDayWeek="1"
+              class="calendar">
+            </calendar>
+    </ion-content>

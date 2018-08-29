@@ -1,0 +1,34 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Profile</ion-title>
+    <!-- <ion-buttons end> <button ion-button icon-only (click)="GotoAppInfo()"><ion-icon name="alert"></ion-icon> </button> </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+<ion-content padding class="img-bg">
+  <ion-card id="person">
+    <ion-item style="text-align:center;">
+        <img [src]=ImagePath style="width:150px;height: 150px;margin: 0 auto;border-radius:50%;">
+    </ion-item>
+    <ion-item>
+      <span><b>รหัสผู้ใช้ : </b>{{Code}}</span>
+    </ion-item>
+    <ion-item>
+      <span><b>ชื่อ - นามสกุล :</b> {{Fullname}}</span>
+    </ion-item>
+    <!-- <ion-item>
+      <p>{{Classno}}</p>
+    </ion-item> -->
+    <ion-item>
+      <span><b>E-mail : </b>{{Email}}</span>
+    </ion-item>
+  </ion-card>  
+  <div padding>
+    <button ion-button block icon-right color="primary" (click)="changePIN()" round>
+      เปลี่ยนรหัสผ่าน
+    </button>
+    <button ion-button block icon-right color="danger" (click)="logout()" round>
+      ออกจากระบบ
+    </button>
+  </div>
+</ion-content>

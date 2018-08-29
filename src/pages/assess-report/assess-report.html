@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>Report</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-list style="margin:0px;">
+      <ion-item>
+        <ion-label>ชั้นปี</ion-label>
+        <ion-select [(ngModel)]="ClassNo" (ionChange)="BindData()">
+          <ion-option value="1">ชั้นปีที่ 1</ion-option>
+          <ion-option value="2">ชั้นปีที่ 2</ion-option>
+          <ion-option value="3">ชั้นปีที่ 3</ion-option>
+          <ion-option value="4">ชั้นปีที่ 4</ion-option>
+          <ion-option value="5">ชั้นปีที่ 5</ion-option>
+          <ion-option value="6">ชั้นปีที่ 6</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>ภาคเรียน</ion-label>
+        <ion-select [(ngModel)]="TermNo" (ionChange)="BindData()">
+          <ion-option value="1">ภาคเรียนที่ 1</ion-option>
+          <ion-option value="2">ภาคเรียนที่ 2</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding class="img-bg">
+  <!-- การทำแบบประเมิน -->
+  <ion-card>
+    <ion-card-header>
+      การทำแบบประเมิน
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barAssess></canvas>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

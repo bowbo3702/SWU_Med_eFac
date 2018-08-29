@@ -1,0 +1,8 @@
+page-lockscreen {
+    //hide scroll
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+    display: none;
+    }
+
+}

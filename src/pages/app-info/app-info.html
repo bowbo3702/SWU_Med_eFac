@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Application Info</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="img-bg">
+  <ion-card>
+    <ion-card-content class="clear-padding-lr">
+      <ion-card-title text-center>App Version (On Device)</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 class="col-title">App. Name</ion-col>
+          <ion-col col-8 class="clear-padding-lr">
+            <p>{{appName}}</p>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col col-4 class="col-title">Package Name</ion-col>
+          <ion-col col-8 class="clear-padding-lr">
+            <p>{{packageName}}</p>
+          </ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col col-4 class="col-title">Version</ion-col>
+          <ion-col col-8 class="clear-padding-lr">
+            <p>{{versionNumber}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <div padding>
+      <button ion-button block icon-right color="primary" round>
+        ดาวน์โหลดเวอร์ชั่นใหม่
+      </button>
+    </div>
+  <ion-card *ngIf="isNewUpdate">
+    <ion-card-content class="clear-padding-lr">
+      <ion-card-title text-center>New Version Update</ion-card-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col col-4 class="col-title">Version Number</ion-col>
+          <ion-col col-8 class="clear-padding-lr">
+            <p>{{newVersionNumber}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-4 class="col-title">New Feature</ion-col>
+          <ion-col col-8 class="clear-padding-lr">
+            <p>{{newfeature}}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div padding>
+        <button ion-button full icon-right color="primary" round (click)="update()">
+          Install
+          <ion-icon name="sync"></ion-icon>
+        </button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

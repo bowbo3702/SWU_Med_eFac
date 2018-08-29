@@ -38,7 +38,9 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  green1:  #288a0a,
+  orange1:  #ff9900,
 );
 
 
@@ -86,3 +88,45 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+.circle-button {
+  display:block;
+  width:50px;
+  height:50px;
+  line-height:50px;
+  border-radius: 50%;
+  text-align:center;
+  text-decoration:none;
+  box-shadow: 0 0 3px gray;
+  font-size:20px;
+  margin: 0 auto;
+}
+.img-bg{
+  background: url('../assets/imgs/bg.jpg') no-repeat fixed center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.ion-row-number{
+  text-align: center;
+}
+.btn-number{
+  background-color: transparent;
+  color: rgb(6, 66, 33);
+  border: 1px solid  rgb(6, 66, 33);
+}
+.col-input-pin{
+  text-align: center;
+  padding: 0px 2px;
+}    
+.div-input-pin{
+  text-align: center;
+  border-bottom: 3px solid #888888;
+  height: 30px;
+}
+.circle-button:hover {
+  background: rgb(6, 66, 33);
+  color: #ffffff;
+}

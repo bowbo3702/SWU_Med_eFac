@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title style="text-align:center;"><span style="color:hsl(7, 95%, 40%);">SWU</span><span style="color:rgb(7, 76, 122);"> Med </span><span style="color:hsl(129, 85%, 27%);"> e-Fac</span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="confirmpin-bg">
+    <ion-grid>
+      <ion-row>
+          <ion-col col-12 style="text-align: center;">
+              <img src="assets/imgs/logo-swu.png" style="width:40%; margin: 0 auto !important;text-align: center;" >
+          </ion-col>
+      </ion-row>
+      <ion-row class="ion-row-number">
+        <ion-col col-2></ion-col>
+        <ion-col col-8>ยืนยันรหัสผ่าน</ion-col>
+        <ion-col col-2></ion-col>
+      </ion-row>
+      <ion-row style="margin-bottom: 15px;margin-top: 25px;">
+          <ion-col col-1></ion-col>
+          <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN1}}</div></ion-col>
+          <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN2}}</div></ion-col>
+          <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN3}}</div></ion-col>
+          <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN4}}</div></ion-col>
+          <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN5}}</div></ion-col>
+          <ion-col col-1></ion-col>
+          <!-- <ion-col col-2 class="col-input-pin"><div class="div-input-pin">{{sPIN6}}</div></ion-col> -->
+      </ion-row>
+     <ion-row class="ion-row-number">
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('1')">1</a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('2')">2</a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('3')">3</a></ion-col>
+     </ion-row>
+      <ion-row class="ion-row-number">
+          <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('4')">4</a></ion-col>
+          <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('5')">5</a></ion-col>
+          <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('6')">6</a></ion-col>
+     </ion-row>
+     <ion-row class="ion-row-number">
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('7')">7</a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('8')">8</a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('9')">9</a></ion-col>
+     </ion-row>
+     <ion-row class="ion-row-number">
+       <ion-col col-4><a class="circle-button btn-number" (click)="Cancel()"><ion-icon name="arrow-round-back"></ion-icon></a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="AddNumber('0')">0</a></ion-col>
+        <ion-col col-4><a class="circle-button btn-number" (click)="DelNumber()" *ngIf="isShowBtnBackSpace"><ion-icon name="backspace"></ion-icon></a></ion-col>
+   
+      </ion-row>
+     <ion-row>
+        <ion-col col-12 style="text-align: center;">
+            <button ion-button full round  color="primary-dark" (click)="ConfirmPIN()">ยืนยัน</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>

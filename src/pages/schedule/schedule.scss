@@ -1,0 +1,41 @@
+page-schedule {
+    .toolbar-background {
+        background-color: #c7efdf;
+      }
+    .table table-bordered table-fixed weekview-header thead:first-child
+    {
+        border-top: 2px solid #9ec0fe;
+    }
+    .weekview-header
+    {
+        background-color: #f5f8ff;
+    }
+    .table.table-bordered.table-fixed.weekview-normal-event-table tr:nth-child(6)
+    {
+         background-color: #ebebebcc;
+    }
+     .table.table-bordered.table-fixed.weekview-normal-event-table tr > td:first-child
+    {
+         border-right: 2px solid #9ec0fe;
+         font-size: 11px;
+    }
+     .table.table-bordered.table-fixed.weekview-normal-event-table
+    {
+         border-top: 2px solid #9ec0fe;
+    }
+    .weekview-allday-table {
+     height: 50px;
+     position: relative;
+     border-bottom: 0px solid #ddd; 
+     font-size: 14px;
+     display: none;
+     }
+     .weekview-normal-event-container{
+        margin-top: 37px !important;
+     }
+     .table-bordered > thead > tr > th, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > tbody > tr > td, .table-bordered > tfoot > tr > td
+     {
+        border: 1px solid #ddd;
+        // border-bottom: 2px solid #9ec0fe;
+     }
+}
