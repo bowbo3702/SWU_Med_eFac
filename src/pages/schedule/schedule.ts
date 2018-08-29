@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription'; //import Subscription เพ�
 
 import { UserloginProvider } from '../../providers/userlogin/userlogin';//import service เข้ามาใช้งาน
 import {ApiProvider} from '../../providers/api/api';
-import { UserAccount } from '../../models/useraccount';
+import { UserAccount } from '../../models/UserAccount';
 import { CommonProvider } from '../../providers/common/common';
 
 import { ScheduleDetailPage} from '../schedule-detail/schedule-detail';

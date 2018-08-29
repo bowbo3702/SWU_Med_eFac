@@ -11,7 +11,7 @@ import { Schedule,ScheduleEvent,ST_Schedule_Calendar_Topic,ST_Schedule_Calendar_
 import { ScheduleProvider} from '../../providers/schedule/schedule';
 import { UserloginProvider } from '../../providers/userlogin/userlogin';//import service เข้ามาใช้งาน
 import { ApiProvider} from '../../providers/api/api';
-import { UserAccount } from '../../models/useraccount';
+import { UserAccount } from '../../models/UserAccount';
 @Component({
   selector: 'page-schedule-detail',
   templateUrl: 'schedule-detail.html',

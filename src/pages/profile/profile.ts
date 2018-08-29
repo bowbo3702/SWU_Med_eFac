@@ -8,7 +8,7 @@ import {AppInfoPage} from '../app-info/app-info';
 
 import { UserloginProvider } from '../../providers/userlogin/userlogin';//import service เข้ามาใช้งาน
 import {ApiProvider} from '../../providers/api/api';
-import { UserAccount } from '../../models/useraccount';
+import { UserAccount } from '../../models/UserAccount';
 
 @Component({
   selector: 'page-profile',
