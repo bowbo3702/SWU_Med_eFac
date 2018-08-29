@@ -14,7 +14,7 @@ import { TabsPage } from '../tabs/tabs';
 import { LoginPage } from '../login/login';
 @Component({
   selector: 'page-lockscreen',
-  templateUrl: 'lockscreen.html',
+  templateUrl: 'lockscreen.html', 
 })
 export class LockscreenPage {
   UserAccountData:UserAccount;
