@@ -18,7 +18,7 @@ export class ProfilePage {
   url:string;
   Code:string;
   Fullname:String;
-  Classno:String;
+  Classno:String; 
   Email:string;
   ImagePath:string;
   UserAccountData:UserAccount;
