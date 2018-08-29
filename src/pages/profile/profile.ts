@@ -61,7 +61,7 @@ export class ProfilePage {
   changePIN(){
     this.navCtrl.push(ChangePinPage);
   }
-  GotoAppInfo(){
+  GotoAppInfo(){ 
     this.navCtrl.push(AppInfoPage);
   }
 }
